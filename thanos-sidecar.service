@@ -1,0 +1,27 @@
+[Unit]
+Description=Thanos Sidecar
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prometheus
+Group=prometheus
+Type=simple
+ExecStart=/usr/sbin/thanos sidecar \
+    --log.level=info \
+    --prometheus.url=http://localhost:9090 \
+    --http-address=0.0.0.0:10902 \
+    --grpc-address=0.0.0.0:10901 \
+    --http-grace-period=2m \
+    --grpc-grace-period=2m \
+    --prometheus.ready_timeout=5m \
+    --tsdb.path=/base/prometheus/ \
+    --objstore.config-file=/opt/thanos/sidecar/storage.yaml \
+    --shipper.upload-compacted 
+	
+	
+ExecReload=/usr/bin/kill -s HUP $MAINPID
+ExecStop=/usr/bin/kill -s QUIT $MAINPID
+
+[Install]
+WantedBy=multi-user.target
