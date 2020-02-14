@@ -29,6 +29,7 @@ Error blocks:<br>
 01E0A97QNS22R5Z64FYBR1W27Y<br>
 <br><br>
 Also, I attach a system organization diagram and configuration files.<br>
+<code>https://github.com/Zergvl/thanos</code>
 All elements are stand-alone servers.<br>
 <br>
 ![screen](https://github.com/Zergvl/thanos/blob/master/Thanos.JPG)
