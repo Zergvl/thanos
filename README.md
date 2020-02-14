@@ -3,7 +3,8 @@ Q: is minio distributed or single node?<br>
 A: Yes, its distributed, and have a balancer "Traefik" before it.<br>
 <br><br>
 Thanos-compactor command:<br>
-<code>
+
+```
 /usr/sbin/thanos compact 
   --wait 
   --log.level=debug 
@@ -16,7 +17,7 @@ Thanos-compactor command:<br>
   --consistency-delay=30m 
   --block-sync-concurrency=20 
   --compact.concurrency=5
-</code>
+```
 <br>
 Thanos-compactor log:<br>
 
