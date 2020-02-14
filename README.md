@@ -1,6 +1,6 @@
 # thanos <br>
 Q: is minio distributed or single node?<br>
-A: Yes, its distributed, and hava a balancer "Traefik" before it.<br>
+A: Yes, its distributed, and have a balancer "Traefik" before it.<br>
 <br><br>
 Thanos-compactor command:<br>
 <code>/usr/sbin/thanos compact --wait --log.level=debug --data-dir=/thanos/compact --http-address=0.0.0.0:19191 --objstore.config-file=/opt/thanos/storage.yaml --retention.resolution-raw=21d --retention.resolution-5m=90d --retention.resolution-1h=365d --consistency-delay=30m --block-sync-concurrency=20 --compact.concurrency=5
